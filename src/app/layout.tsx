@@ -16,9 +16,7 @@ import { WelcomeToast } from '@/src/components/layouts/welcome-toast';
 
 
 const { FACEBOOK_CREATOR, FACEBOOK_SITE, SITE_NAME } = process.env;
-const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
-  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-  : 'http://localhost:3000';
+const baseUrl = 'http://localhost:3000';
 const FACEBOOKCreator = FACEBOOK_CREATOR ? ensureStartsWith(FACEBOOK_CREATOR, '@') : undefined;
 const FACEBOOKSite = FACEBOOK_SITE ? ensureStartsWith(FACEBOOK_SITE, 'https://') : undefined;
 export const metadata: Metadata = {
