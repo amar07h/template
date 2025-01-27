@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { ThreeItemGrid } from '@/src/components/grid/three-items';
+import { Carousel } from '@/src/components/carousel';
 import Footer from '@/src/components/layouts/footer';
 
 export const metadata:Metadata = {
@@ -11,6 +13,8 @@ export const metadata:Metadata = {
 export default function Home() {
   return (
     <>
+          <ThreeItemGrid />
+<Carousel/>
       <Footer />
     </>
   );
