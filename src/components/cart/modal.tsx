@@ -83,12 +83,17 @@ export default function CartModal() {
               </div>
 
               {!cart || cart.lines.length === 0 ? (
+                
                 <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
+               
                   <ShoppingCartIcon className="h-16" />
                   <p className="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
+                  
                 </div>
               ) : (
+                
                 <div className="flex h-full flex-col justify-between overflow-hidden p-1">
+
                   <ul className="flex-grow overflow-auto py-4">
                     {cart.lines
                       .sort((a, b) =>
@@ -102,7 +107,6 @@ export default function CartModal() {
                             merchandiseSearchParams[name.toLowerCase()] = value;
                           }
                         });
-
                         const merchandiseUrl = createUrl(
                           `/product/${item.merchandise.product.handle}`,
                           new URLSearchParams(merchandiseSearchParams)
@@ -127,6 +131,7 @@ export default function CartModal() {
                                       item.merchandise.product.featuredImage.altText ||
                                       item.merchandise.product.title
                                     }
+                                    property=''
                                     src={item.merchandise.product.featuredImage.url}
                                   />
                                 </div>

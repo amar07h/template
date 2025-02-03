@@ -77,7 +77,7 @@ function createOrUpdateCartItem(
 function updateCartTotals(lines: CartItem[]): Pick<Cart, 'totalQuantity' | 'cost'> {
   const totalQuantity = lines.reduce((sum, item) => sum + item.quantity, 0);
   const totalAmount = lines.reduce((sum, item) => sum + Number(item.cost.totalAmount.amount), 0);
-  const currencyCode = lines[0]?.cost.totalAmount.currencyCode ?? 'USD';
+  const currencyCode = lines[0]?.cost.totalAmount.currencyCode ?? 'tnd';
 
   return {
     totalQuantity,
@@ -96,12 +96,14 @@ function createEmptyCart(): Cart {
     totalQuantity: 0,
     lines: [],
     cost: {
-      subtotalAmount: { amount: '0', currencyCode: 'USD' },
-      totalAmount: { amount: '0', currencyCode: 'USD' },
-      totalTaxAmount: { amount: '0', currencyCode: 'USD' }
+      subtotalAmount: { amount: '0', currencyCode: 'dt'},
+      totalAmount: { amount: '0', currencyCode: 'dt'},
+      totalTaxAmount: { amount: '0', currencyCode: 'dt'}
     }
   };
 }
+
+
 
 function cartReducer(state: Cart | undefined, action: CartAction): Cart {
   const currentCart = state || createEmptyCart();
@@ -159,7 +161,8 @@ export function CartProvider({
     updateOptimisticCart({ type: 'UPDATE_ITEM', payload: { merchandiseId, updateType } });
   };
 
-  const addCartItem = (variant: ProductVariant, product: Product) => {
+  const addCartItem = (variant: ProductVariant, product: Product) => 
+    {
     updateOptimisticCart({ type: 'ADD_ITEM', payload: { variant, product } });
   };
 
@@ -177,6 +180,7 @@ export function CartProvider({
 
 export function useCart() {
   const context = useContext(CartContext);
+
   if (context === undefined) {
     throw new Error('useCart must be used within a CartProvider');
   }

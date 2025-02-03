@@ -13,7 +13,7 @@ import { getCart } from '@/src/lib/api/index';
 import { Navbar } from '@/src/components/layouts/navbar';
 import { Toaster } from 'sonner';
 import { WelcomeToast } from '@/src/components/layouts/welcome-toast';
-
+//? cart context using conext hook
 
 const { FACEBOOK_CREATOR, FACEBOOK_SITE, SITE_NAME } = process.env;
 const baseUrl = 'http://localhost:3000';

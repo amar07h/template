@@ -1,10 +1,9 @@
 'use client';
-
 import { PlusIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
-import { addItem } from 'components/cart/actions';
-import { useProduct } from 'components/product/product-context';
-import { Product, ProductVariant } from 'lib/shopify/types';
+import { addItem } from '@/src/components/cart/actions';
+import { useProduct } from '@/src/components/product/product-context';
+import { Product, ProductVariant } from '@/src/lib/types';
 import { useActionState } from 'react';
 import { useCart } from './cart-context';
 
@@ -27,7 +26,6 @@ function SubmitButton({
     );
   }
 
-  console.log(selectedVariantId);
   if (!selectedVariantId) {
     return (
       <button
@@ -76,7 +74,7 @@ export function AddToCart({ product }: { product: Product }) {
     <form
       action={async () => {
         addCartItem(finalVariant, product);
-        await actionWithVariant();
+       actionWithVariant();
       }}
     >
       <SubmitButton availableForSale={availableForSale} selectedVariantId={selectedVariantId} />
