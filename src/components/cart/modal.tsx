@@ -4,7 +4,6 @@ import { Dialog, Transition } from '@headlessui/react';
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import LoadingDots from '@/src/components/loading-dots';
 import Price from '@/src/components/price';
-import { DEFAULT_OPTION } from '@/src/lib/constants';
 import { createUrl } from '@/src/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -102,11 +101,7 @@ export default function CartModal() {
                       .map((item, i) => {
                         const merchandiseSearchParams = {} as MerchandiseSearchParams;
 
-                        item.merchandise.selectedOptions.forEach(({ name, value }) => {
-                          if (value !== DEFAULT_OPTION) {
-                            merchandiseSearchParams[name.toLowerCase()] = value;
-                          }
-                        });
+                      
                         const merchandiseUrl = createUrl(
                           `/product/${item.merchandise.product.handle}`,
                           new URLSearchParams(merchandiseSearchParams)
@@ -144,7 +139,7 @@ export default function CartModal() {
                                     <span className="leading-tight">
                                       {item.merchandise.product.title}
                                     </span>
-                                    {item.merchandise.title !== DEFAULT_OPTION ? (
+                                    {item.merchandise.title !=="default" ? (
                                       <p className="text-sm text-neutral-500 dark:text-neutral-400">
                                         {item.merchandise.title}
                                       </p>

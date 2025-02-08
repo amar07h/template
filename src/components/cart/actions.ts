@@ -1,6 +1,5 @@
 'use server';
 
-import { TAGS } from '@/src/lib/constants';
 //import { addToCart, createCart, getCart, removeFromCart, updateCart } from 'lib/shopify';
 import { revalidateTag } from 'next/cache';
 import { cookies } from 'next/headers';
@@ -15,7 +14,7 @@ export async function addItem(prevState: any, selectedVariantId: string | undefi
 
   try {
   //  await addToCart(cartId, [{ merchandiseId: selectedVariantId, quantity: 1 }]);
-    revalidateTag(TAGS.cart);
+   // revalidateTag(TAGS.cart);
   } catch (e) {
     return 'Error adding item to cart';
   }
