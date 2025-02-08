@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import FooterMenu from './footer-menu';
-import LogoSquare from '@/src/components/logo-square';
+import LogoSquare from '@/components/logo-square';
 import { Suspense } from 'react';
 
 const { COMPANY_NAME, SITE_NAME } = process.env;

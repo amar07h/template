@@ -1,6 +1,6 @@
 'use client';
 
-import type { Cart, CartItem, Product, ProductVariant } from '@/src/lib/types';
+import type { Cart, CartItem, Product, ProductVariant } from '@/lib/types';
 import React, { createContext, use, useContext, useMemo, useOptimistic } from 'react';
 
 type UpdateType = 'plus' | 'minus' | 'delete';

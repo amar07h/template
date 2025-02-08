@@ -3,16 +3,16 @@ import { cookies } from 'next/headers';
 
 import type { Metadata } from "next";
 import "./globals.css";
-import { CartProvider } from '@/src/components/cart/cart-context';
+import { CartProvider } from '@/components/cart/cart-context';
 
 import { GeistSans } from 'geist/font/sans';
-import { ensureStartsWith } from '@/src/lib/utils'
-import { getCart } from '@/src/lib/api/index';
+import { ensureStartsWith } from '@/lib/utils'
+import { getCart } from '@/lib/api/index';
 
 //? ui 
-import { Navbar } from '@/src/components/layouts/navbar';
+import { Navbar } from '@/components/layouts/navbar';
 import { Toaster } from 'sonner';
-import { WelcomeToast } from '@/src/components/layouts/welcome-toast';
+import { WelcomeToast } from '@/components/layouts/welcome-toast';
 //? cart context using conext hook
 
 const { FACEBOOK_CREATOR, FACEBOOK_SITE, SITE_NAME } = process.env;

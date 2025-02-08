@@ -1,6 +1,6 @@
 
-import CartModal from '@/src/components/cart/modal';
-import LogoSquare from '@/src/components/logo-square';
+import CartModal from '@/components/cart/modal';
+import LogoSquare from '@/components/logo-square';
 
 import Link from 'next/link';
 import { Suspense } from 'react';

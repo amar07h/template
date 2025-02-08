@@ -1,15 +1,14 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { GridTileImage } from '@/src/components/grid/tile';
-import Footer from '@/src/components/layouts/footer';
-import { Gallery } from '@/src/components/product/gallery';
-import { ProductProvider } from '@/src/components/product/product-context';
-import { ProductDescription } from '@/src/components/product/product-description';
-import { HIDDEN_PRODUCT_TAG } from '@/src/lib/constants';
+import { GridTileImage } from '@/components/grid/tile';
+import Footer from '@/components/layouts/footer';
+import { Gallery } from '@/components/product/gallery';
+import { ProductProvider } from '@/components/product/product-context';
+import { ProductDescription } from '@/components/product/product-description';
 //import { getProduct, getProductRecommendations } from 'lib/shopify';
 import products from '@/data.json';
 
-import { Image } from '@/src/lib/types';
+//import { Image } from '@/lib/types';
 import Link from 'next/link';
 import { Suspense } from 'react';
 

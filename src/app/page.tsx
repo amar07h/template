@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { ThreeItemGrid } from '@/src/components/grid/three-items';
-import { Carousel } from '@/src/components/carousel';
-import Footer from '@/src/components/layouts/footer';
+import { ThreeItemGrid } from '@/components/grid/three-items';
+import { Carousel } from '@/components/carousel';
+import Footer from '@/components/layouts/footer';
 
 export const metadata:Metadata = {
   //TODO : add description to home page 
@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <>
           <ThreeItemGrid />
-<Carousel/>
-      <Footer />
+           <Carousel/>
+          <Footer />
     </>
   );
 }
